@@ -13,6 +13,7 @@
 #pragma once
 
 #include <memory>
+#include <string>
 
 namespace co_async {
 

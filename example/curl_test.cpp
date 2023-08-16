@@ -12,15 +12,16 @@ void curl_test(bool use_co) {
         CoroutineTask::doTask([](void*) {
             int* count = new int(0);
             int* fail = new int(0);
-            for (int i = 0; i < 1000; i++) {
-                async::curl::get("http://baidu.com", [i, count, fail](async::curl::CurlParserPtr parser) {
-                    //log("%d curlCode:%d, resCode:%d, bodySize:%ld\n", i, parser->getCurlCode(), parser->getRspCode(), parser->getValue().size());
+            int  loop =10;
+            for (int i = 0; i < loop; i++) {
+                async::curl::get("http://yacai-test-shanghai-s.oss-cn-shanghai.aliyuncs.com", [i, count, fail](async::curl::CurlParserPtr parser) {
+                    log("%d curlCode:%d, resCode:%d, bodySize:%ld\n", i, parser->getCurlCode(), parser->getRspCode(), parser->getValue().size());
                     if (parser->getRspCode() != 200) {
                         (*fail)++;
                     }
                     (*count)++;
 
-                    if (*count == 1000) {
+                    if (*count == 10) {
                         log("finish: count: %d, fail: %d", *count, *fail);
                     }
                 });

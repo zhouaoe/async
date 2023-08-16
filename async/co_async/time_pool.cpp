@@ -14,6 +14,7 @@
 #include <assert.h>
 #include <memory>
 #include <time.h>
+#include <cstdlib>
 
 namespace co_async {
 namespace t_pool {

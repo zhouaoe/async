@@ -51,7 +51,7 @@ int main() {
             //promise_test();
             //cpu_test(true);
             //co_parallel_test();
-            //curl_test(true);
+            curl_test(true);
             //mongo_test(true);
             //redis_test(true);
             //co_mysql_test();

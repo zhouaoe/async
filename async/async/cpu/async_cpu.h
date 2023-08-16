@@ -9,7 +9,7 @@
 #pragma once
 
 #include <functional>
-
+#include <string>
 #define CUR_CPU_VERSION (2)
 
 namespace async {
@@ -23,6 +23,5 @@ void execute(async_cpu_op op, void* user_data, async_cpu_cb cb);
 bool loop(uint32_t curTime);
 
 void setThreadFunc(std::function<void(std::function<void()>)>);
-
 }
 }
